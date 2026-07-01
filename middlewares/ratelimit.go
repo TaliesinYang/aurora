@@ -1,14 +1,19 @@
 package middlewares
 
 import (
+	"math/rand/v2"
+	"sync"
 	"time"
 
 	"github.com/gin-gonic/gin"
 )
 
-var limiter = time.NewTicker(5 * time.Second)
+var mu sync.Mutex
 
 func RateLimit(c *gin.Context) {
-	<-limiter.C
+	mu.Lock()
+	d := 3 + rand.IntN(8)
+	mu.Unlock()
+	time.Sleep(time.Duration(d) * time.Second)
 	c.Next()
 }
