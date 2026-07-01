@@ -12,8 +12,8 @@ var mu sync.Mutex
 
 func RateLimit(c *gin.Context) {
 	mu.Lock()
+	defer mu.Unlock()
 	d := 3 + rand.IntN(8)
-	mu.Unlock()
 	time.Sleep(time.Duration(d) * time.Second)
 	c.Next()
 }
