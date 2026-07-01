@@ -1831,7 +1831,8 @@ func (h *Handler) engines(c *gin.Context) {
 		"gpt-5",
 		"gpt-4o",
 		"gpt-4o-mini",
-		"o3",
+		"o1",
+		"o3-mini",
 		"o4-mini",
 		"o4-mini-high",
 	}
