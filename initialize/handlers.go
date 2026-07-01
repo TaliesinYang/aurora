@@ -1826,6 +1826,8 @@ func (h *Handler) engines(c *gin.Context) {
 	models := []string{
 		"auto",
 		"gpt-5-5-instant",
+		"gpt-5-5-medium",
+		"gpt-5-5-high",
 		"gpt-5-5-thinking",
 		"gpt-5-5-pro",
 		"gpt-5",
